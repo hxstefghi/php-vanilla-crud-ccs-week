@@ -1,0 +1,47 @@
+<?php
+
+use Controllers\Database;
+
+class Register extends Database
+{
+
+  private $name, $email, $password, $errors;
+
+  public function __construct()
+  {
+    session_start();
+
+    $this->name = $_POST['name'];
+    $this->email = $_POST['email'];
+    $this->password = $_POST['password'];
+
+
+    $this->errors = [];
+
+    $this->validateFields();
+
+    parent::__construct();
+  }
+
+  public function validateFields()
+  {
+    if (!isset($this->name) || empty($this->name)) {
+      $this->errors['name'] = 'The name field is required';
+    }
+
+    if (!isset($this->email) || empty($this->email)) {
+      $this->errors['email'] = 'The email field is required';
+    }
+
+    if (!isset($this->password) || empty($this->password)) {
+      $this->errors['password'] = 'Password field is required';
+    }
+
+    if (!empty($this->errors)) {
+      $_SESSION['errors'] = $this->errors;
+
+      header("Location: /register.php");
+      die();
+    }
+  }
+}
