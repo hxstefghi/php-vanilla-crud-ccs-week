@@ -23,7 +23,7 @@ class Register extends Database
     parent::__construct();
   }
 
-  public function validateFields()
+  private function validateFields()
   {
     if (!isset($this->name) || empty($this->name)) {
       $this->errors['name'] = 'The name field is required';
@@ -42,6 +42,20 @@ class Register extends Database
 
       header("Location: /register.php");
       die();
+    }
+  }
+
+  public function save()
+  {
+    $query = "INSERT INTO users (name, email, password, updated_at, created_at)
+              VALUES ('$this->name', '$this->email', '$this->password', NOW(), NOW())";
+
+    $result = $this->sql->query($query);
+
+    if ($result) {
+      echo "User registered successfully!";
+    } else {
+      $this->sql->error;
     }
   }
 }
