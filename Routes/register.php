@@ -1,0 +1,6 @@
+<?php
+
+require_once("../Controllers/Database.php");
+require_once("../Controllers/Register.php");
+
+$class = new Register();
