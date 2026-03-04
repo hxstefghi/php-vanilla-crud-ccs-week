@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+$errors = isset($_SESSION['errors']) ? $_SESSION['errors'] : [];
+
+session_destroy();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,24 +29,42 @@
       <button class="py-3 px-8 cursor-pointer rounded-lg border-1 border-gray-300 text-sm bg-gray-100"><i class="fa-brands fa-apple"></i> Sign up with Apple</button>
     </div>
 
-    <form action="" method="POST">
+    <form action="./Routes/register.php" method="POST">
       <div class="flex flex-col space-y-3">
-        <div class="flex flex-col space-y-1">
-          <label for="name" class="text-gray-500 text-sm">Name</label>
-          <input type="text" name="name" placeholder="John Doe" class="border border-gray-300 text-sm text-black rounded-lg py-2 px-4">
-        </div>
+        <?php
 
-        <div class="flex flex-col space-y-1">
-          <label for="email" class="text-gray-500 text-sm">Email</label>
-          <input type="email" name="email" placeholder="johndoe@example.com" class="border border-gray-300 text-sm text-black rounded-lg py-2 px-4">
-        </div>
+        $attribute = [
+          'name' => 'name',
+          'label' => 'Name',
+          'type' => 'text',
+        ];
 
-        <div class="flex flex-col space-y-1 mb-4">
-          <label for="password" class="text-gray-500 text-sm">Password</label>
-          <input type="password" name="password" placeholder="*******" class="border border-gray-300 text-sm text-black rounded-lg py-2 px-4">
-        </div>
+        require("./Components/input-field.php");
+        ?>
 
-        <button class="w-full cursor-pointer py-2 text-sm font-bold rounded-lg bg-lime-300 hover:bg-lime-400">Register</button>
+        <?php
+
+        $attribute = [
+          'name' => 'email',
+          'label' => 'Email',
+          'type' => 'email',
+        ];
+
+        require("./Components/input-field.php");
+        ?>
+
+        <?php
+
+        $attribute = [
+          'name' => 'password',
+          'label' => 'Password',
+          'type' => 'password',
+        ];
+
+        require("./Components/input-field.php");
+        ?>
+
+        <button type="submit" class="w-full cursor-pointer py-2 text-sm font-bold rounded-lg bg-lime-300 hover:bg-lime-400">Register</button>
       </div>
     </form>
 

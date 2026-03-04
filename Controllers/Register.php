@@ -57,5 +57,22 @@ class Register extends Database
     } else {
       $this->sql->error;
     }
+
+    $this->authenticate();
+  }
+
+  private function authenticate()
+  {
+
+    $query = "SELECT * FROM users WHERE email = '$this->email' LIMIT 1";
+
+    $result = $this->sql->query($query);
+
+    $user = $result->fetch_assoc();
+
+    $_SESSION['user'] = $user;
+
+    header('Location: /home.php');
+    die();
   }
 }
