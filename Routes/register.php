@@ -2,7 +2,7 @@
 
 namespace Controllers;
 
-use Register;
+use Controllers\Register;
 
 require_once("../Controllers/Database.php");
 require_once("../Controllers/Register.php");

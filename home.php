@@ -1,5 +1,10 @@
 <?php
-session_start();
+require_once('./Controllers/Database.php');
+require_once('./Controllers/Post.php');
+
+$posts = new \Controllers\Post;
+$allPosts = $posts->getAllPosts();
+
 
 $errors = isset($_SESSION['errors']) ? $_SESSION['errors'] : [];
 $user = isset($_SESSION['user']) ? $_SESSION['user'] : [];
@@ -17,25 +22,11 @@ require_once('./Components/head.php');
 
 <body>
   <div class="max-w-5xl mx-auto">
-    <header class="py-5">
-      <nav class="flex justify-between items-center">
-        <div class="flex items-center">
-          <h2 class="text-2xl font-bold me-10">Logo</h2>
-          <div class="space-x-4 text-sm">
-            <a href="#">Home</a>
-            <a href="#">Home</a>
-            <a href="#">Home</a>
-            <a href="#">Home</a>
-          </div>
-        </div>
+    <?php
 
+    require('./Components/nav.php');
 
-        <div class="text-sm space-x-4">
-          <a href="#" class="py-2 px-4 outline outline-gray-800 rounded-lg">My dashboard</a>
-          <a href="./logout.php">Logout</a>
-        </div>
-      </nav>
-    </header>
+    ?>
 
     <main>
       <section class="flex justify-center py-18">
@@ -53,15 +44,29 @@ require_once('./Components/head.php');
         <div class="flex justify-between items-center">
           <h3 class="text-xl font-bold">Posts</h3>
 
-          <a href="#" class="py-2 px-4 bg-lime-400 hover:bg-lime-300 font-bold text-sm rounded-lg">New Post</a>
+          <a href="./create-post.php" class="py-2 px-4 bg-lime-400 hover:bg-lime-300 font-bold text-sm rounded-lg">New Post</a>
         </div>
 
         <div class="grid grid-cols-3 gap-3">
-          <div class="flex flex-col outline outline-gray-800 p-4 rounded-lg">
-            <h3 class="text-lg font-bold">Title</h3>
-            <p class="text-xs text-gray-400 mb-2"><?= $user['name'] ?></p>
-            <p class="text-gray-500 text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae ab voluptatibus error autem repudiandae vitae, minima fugiat nam necessitatibus tenetur.</p>
-          </div>
+
+
+          <?php
+
+          foreach ($allPosts as $post) {
+
+          ?>
+            <div class="flex flex-col outline outline-gray-800 p-4 rounded-lg">
+              <h3 class="text-lg font-bold"><?= $post['title'] ?></h3>
+              <p class="text-xs text-gray-400 mb-2"><?= $post['name'] ?></p>
+              <p class="text-gray-500 text-sm"><?= $post['body'] ?></p>
+            </div>
+
+          <?php
+
+          }
+
+          ?>
+
         </div>
       </section>
     </main>
