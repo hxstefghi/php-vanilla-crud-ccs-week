@@ -2,7 +2,7 @@
 
 namespace Controllers;
 
-use Login;
+use Controllers\Login;
 
 require_once('../Controllers/Database.php');
 require_once('../Controllers/Login.php');

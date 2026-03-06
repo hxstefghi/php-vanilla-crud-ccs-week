@@ -1,5 +1,7 @@
 <?php
 
+namespace Controllers;
+
 use Controllers\Database;
 
 class Login extends Database
