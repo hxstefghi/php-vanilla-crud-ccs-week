@@ -3,7 +3,7 @@ require_once('./Controllers/Database.php');
 require_once('./Controllers/Post.php');
 
 $posts = new \Controllers\Post;
-$allPosts = $posts->getAllPosts();
+$getPost = $posts->getPost();
 
 
 $errors = isset($_SESSION['errors']) ? $_SESSION['errors'] : [];
@@ -40,37 +40,23 @@ require_once('./Components/head.php');
         </div>
       </section>
 
-      <section class="space-y-3 py-8">
+      <section class="space-y-3">
         <div class="flex justify-between items-center">
           <h3 class="text-xl font-bold">Posts</h3>
 
           <a href="./create-post.php" class="py-2 px-4 bg-lime-400 hover:bg-lime-300 font-bold text-sm rounded-lg">New Post</a>
         </div>
 
-        <div class="grid grid-cols-3 gap-3">
-
-
-          <?php
-
-          foreach ($allPosts as $post) {
-
-          ?>
-
-            <a href="./view-post.php?id=<?= $post['id'] ?>">
-              <div class="flex flex-col outline outline-gray-800 p-4 rounded-lg">
-                <h3 class="text-lg font-bold"><?= $post['title'] ?></h3>
-                <p class="text-xs text-gray-400 mb-2"><?= $post['name'] ?></p>
-                <p class="text-gray-500 text-sm"><?= $post['body'] ?></p>
-              </div>
-            </a>
-
-          <?php
-
-          }
-
-          ?>
-
+        <div class="flex items-center justify-center">
+          <div class="flex flex-col space-y-1 outline outline-gray-800 p-4 rounded-lg w-100">
+            <div>
+              <h3 class="text-lg font-bold"><?= $getPost['title'] ?></h3>
+              <p class="text-xs text-gray-400 mb-2"><?= $getPost['name'] ?></p>
+            </div>
+            <p class="text-gray-500 text-sm"><?= $getPost['body'] ?></p>
+          </div>
         </div>
+
       </section>
     </main>
   </div>
