@@ -6,7 +6,7 @@ use Controllers\Database;
 
 class Post extends Database
 {
-  private $user_id, $title, $body, $errors;
+  private $user_id, $title, $body, $errors, $post_id;
 
   public function __construct()
   {
@@ -17,6 +17,7 @@ class Post extends Database
     $this->user_id = $_SESSION['user']['id'] ?? null;
     $this->title = $_POST['title'] ?? null;
     $this->body = $_POST['body'] ?? null;
+    $this->post_id = $_GET['id'] ?? null;
 
     $this->errors = [];
   }
@@ -59,7 +60,7 @@ class Post extends Database
     }
   }
 
-  public function getAllPosts()
+  public function getAllPosts(): array
   {
     $query = "SELECT posts.*, users.name, users.email
               FROM posts
@@ -69,5 +70,17 @@ class Post extends Database
     $result = $this->sql->query($query);
 
     return $result->fetch_all(MYSQLI_ASSOC);
+  }
+
+  public function getPost(): array
+  {
+    $query = "SELECT posts.*, users.name, users.email
+              FROM posts
+              LEFT JOIN users ON posts.user_id = users.id
+              WHERE posts.id='$this->post_id'";
+
+    $result = $this->sql->query($query);
+
+    return $result->fetch_assoc();
   }
 }
