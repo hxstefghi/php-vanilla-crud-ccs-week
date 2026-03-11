@@ -48,17 +48,18 @@ require_once('./Components/head.php');
         </div>
 
         <div class="flex items-center justify-center">
-          <div class="flex flex-col space-y-1 outline outline-gray-800 p-4 rounded-lg w-100">
-            <div>
-              <h3 class="text-lg font-bold"><?= $getPost['title'] ?></h3>
-              <p class="text-xs text-gray-400 mb-1"><?= $getPost['name'] ?></p>
-              <div class="flex space-x-3 mb-2">
-                <a href="./edit-post.php?id=<?= $getPost['id'] ?>" class="text-xs text-green-500">Edit</a>
-                <a href="#" class="text-xs text-red-500">Delete</a>
+          <form action="./Routes/update-post.php" method="POST">
+            <div class="flex flex-col space-y-1 outline outline-gray-800 p-4 rounded-lg w-100">
+              <div>
+                <input type="hidden" name="post_id" value="<?= $getPost['id'] ?>">
+                <input type="text" name="title" placeholder="Title" value="<?= $getPost['title'] ?>" class="border border-gray-300 text-sm text-black rounded-lg py-2 px-4">
+                <p class="text-xs text-gray-400 mb-1"><?= $getPost['name'] ?></p>
               </div>
+              <textarea name="body" id="body" rows="2" placeholder="Body" class="outline outline-gray-300 focus:outline-2 focus:outline-black rounded-lg py-2 px-4 w-full"><?= $getPost['body'] ?></textarea>
+
+              <button type="submit" class="py-2 font-bold text-sm rounded-lg bg-lime-400 hover:bg-lime-300 cursor-pointer w-full mt-3">Update post</button>
             </div>
-            <p class="text-gray-500 text-sm"><?= $getPost['body'] ?></p>
-          </div>
+          </form>
         </div>
       </section>
     </main>
