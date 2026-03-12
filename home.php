@@ -34,7 +34,7 @@ require_once('./Components/head.php');
           <h1 class="text-5xl font-bold">Create it. Scale it. Own it.</h1>
           <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, eligendi.</p>
           <div class="flex space-x-4 justify-center mt-4">
-            <a href="#" class="py-3 px-6 bg-lime-400 hover:bg-lime-300 text-sm rounded-lg font-bold">Post Now</a>
+            <a href="./create-post.php" class="py-3 px-6 bg-lime-400 hover:bg-lime-300 text-sm rounded-lg font-bold">Post Now</a>
             <a href="#" class="py-3 px-6 outline outline-gray-800 text-sm rounded-lg font-bold">Discover the platform</a>
           </div>
         </div>
