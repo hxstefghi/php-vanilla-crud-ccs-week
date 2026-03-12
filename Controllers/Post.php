@@ -99,4 +99,18 @@ class Post extends Database
       die();
     }
   }
+
+  public function deletePost()
+  {
+    $query = "DELETE FROM posts WHERE id = '$this->post_id'";
+
+    $result = $this->sql->query($query);
+
+    if (!$result) {
+      die("Error deleting post " . $this->sql->error);
+    } else {
+      header("Location: /home.php");
+      die();
+    }
+  }
 }

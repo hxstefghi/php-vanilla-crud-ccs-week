@@ -52,9 +52,12 @@ require_once('./Components/head.php');
             <div>
               <h3 class="text-lg font-bold"><?= $getPost['title'] ?></h3>
               <p class="text-xs text-gray-400 mb-1"><?= $getPost['name'] ?></p>
-              <div class="flex space-x-3 mb-2">
+              <div class="flex items-center space-x-3 mb-2">
                 <a href="./edit-post.php?id=<?= $getPost['id'] ?>" class="text-xs text-green-500">Edit</a>
-                <a href="#" class="text-xs text-red-500">Delete</a>
+                <form action="./Routes/delete-post.php" method="POST">
+                  <input type="hidden" name="post_id" value="<?= $getPost['id'] ?>">
+                  <button type="submit" class="text-xs text-red-500">Delete</button>
+                </form>
               </div>
             </div>
             <p class="text-gray-500 text-sm"><?= $getPost['body'] ?></p>

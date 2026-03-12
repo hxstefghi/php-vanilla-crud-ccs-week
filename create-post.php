@@ -29,7 +29,7 @@ require_once('./Components/head.php');
           <h2 class="text-3xl font-bold mb-4">Create post</h2>
 
           <form action="./Routes/post.php" method="POST" class="space-y-1">
-            <input type="hidden" name="user_id" value="<?php $user['id'] ?>">
+            <input type="hidden" name="user_id" value="<?= $user['id'] ?>">
 
             <?php
 
