@@ -47,6 +47,10 @@ require_once('./Components/head.php');
           <a href="./create-post.php" class="py-2 px-4 bg-lime-400 hover:bg-lime-300 font-bold text-sm rounded-lg">New Post</a>
         </div>
 
+        <div class="flex items-center">
+          <a href="./view-post.php?id=<?= $getPost['id'] ?>" class="text-xs text-gray-500">
+            < Back</a>
+        </div>
         <div class="flex items-center justify-center">
           <form action="./Routes/update-post.php" method="POST">
             <div class="flex flex-col space-y-1 outline outline-gray-800 p-4 rounded-lg w-100">

@@ -3,10 +3,10 @@
     <div class="flex items-center">
       <a href="./home.php" class="text-2xl font-bold me-10">Logo</a>
       <div class="space-x-4 text-sm">
-        <a href="#">Home</a>
-        <a href="#">Home</a>
-        <a href="#">Home</a>
-        <a href="#">Home</a>
+        <a href="../home.php">Home</a>
+        <a href="#">About</a>
+        <a href="#">Our Menu</a>
+        <a href="#">Contact</a>
       </div>
     </div>
 

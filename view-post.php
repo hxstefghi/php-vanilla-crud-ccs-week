@@ -47,7 +47,11 @@ require_once('./Components/head.php');
           <a href="./create-post.php" class="py-2 px-4 bg-lime-400 hover:bg-lime-300 font-bold text-sm rounded-lg">New Post</a>
         </div>
 
-        <div class="flex items-center justify-center">
+        <div class="flex items-center">
+          <a href="./home.php" class="text-xs text-gray-500">
+            < Back</a>
+        </div>
+        <div class="flex items-center flex-col">
           <div class="flex flex-col space-y-1 outline outline-gray-800 p-4 rounded-lg w-100">
             <div>
               <h3 class="text-lg font-bold"><?= $getPost['title'] ?></h3>
