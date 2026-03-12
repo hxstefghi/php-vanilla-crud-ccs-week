@@ -135,32 +135,32 @@ require_once('./Components/head.php');
           <div class="flex justify-center items-center py-2 px-5 rounded-full outline-1 outline-green-400 hover:bg-green-800 hover:text-white hover:outline-none">
             <p class="font-bold"><span class="text-green-500 mr-2 transition">A</span>spirational</p>
           </div>
-          <div class="flex justify-center items-center py-2 px-5 rounded-full outline-1 outline-green-400">
+          <div class="flex justify-center items-center py-2 px-5 rounded-full outline-1 outline-green-400 hover:bg-green-800 hover:text-white hover:outline-none">
             <p class="font-bold"><span class="text-green-500 mr-2">C</span>ompassionate</p>
           </div>
-          <div class="flex justify-center items-center py-2 px-5 rounded-full outline-1 outline-green-400">
+          <div class="flex justify-center items-center py-2 px-5 rounded-full outline-1 outline-green-400 hover:bg-green-800 hover:text-white hover:outline-none">
             <p class="font-bold"><span class="text-green-500 mr-2">H</span>onorable</p>
           </div>
-          <div class="flex justify-center items-center py-2 px-5 rounded-full outline-1 outline-green-400">
+          <div class="flex justify-center items-center py-2 px-5 rounded-full outline-1 outline-green-400 hover:bg-green-800 hover:text-white hover:outline-none">
             <p class="font-bold"><span class="text-green-500 mr-2">I</span>nspiring</p>
           </div>
-          <div class="flex justify-center items-center py-2 px-5 rounded-full outline-1 outline-green-400">
+          <div class="flex justify-center items-center py-2 px-5 rounded-full outline-1 outline-green-400 hover:bg-green-800 hover:text-white hover:outline-none">
             <p class="font-bold"><span class="text-green-500 mr-2">E</span>fficient</p>
           </div>
-          <div class="flex justify-center items-center py-2 px-5 rounded-full outline-1 outline-green-400">
+          <div class="flex justify-center items-center py-2 px-5 rounded-full outline-1 outline-green-400 hover:bg-green-800 hover:text-white hover:outline-none">
             <p class="font-bold"><span class="text-green-500 mr-2">V</span>isionary</p>
           </div>
-          <div class="flex justify-center items-center py-2 px-5 rounded-full outline-1 outline-green-400">
+          <div class="flex justify-center items-center py-2 px-5 rounded-full outline-1 outline-green-400 hover:bg-green-800 hover:text-white hover:outline-none">
             <p class="font-bold"><span class="text-green-500 mr-2">E</span>thical</p>
           </div>
-          <div class="flex justify-center items-center py-2 px-5 rounded-full outline-1 outline-green-400">
+          <div class="flex justify-center items-center py-2 px-5 rounded-full outline-1 outline-green-400 hover:bg-green-800 hover:text-white hover:outline-none">
             <p class="font-bold"><span class="text-green-500 mr-2">R</span>esponsible</p>
           </div>
         </div>
       </div>
     </section>
 
-    <footer class="py-18 bg-green-700">
+    <footer class="py-18 bg-green-800">
       <div class="max-w-5xl mx-auto">
         <div class="flex gap-10">
           <div class="flex flex-1 flex-col space-y-2">
